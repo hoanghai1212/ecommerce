@@ -6,10 +6,22 @@ input::-webkit-inner-spin-button {
 
 .product__container {
   background-color: #eff0f5;
+  min-height: 100vh;
 }
 
-.product__container h1 {
+.product__container h1,
+.shopping-cart h1 {
   text-shadow: 0px 1px 2px #555;
+}
+
+.product__tool i {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #333;
+  box-shadow: 1px 1px 2px 0 #333333;
+  margin-right: 5px;
 }
 
 .product__item {
@@ -43,25 +55,36 @@ input::-webkit-inner-spin-button {
 }
 
 .product__quantity span {
+  border-radius: 2px;
   display: inline-block;
   width: 30px;
   height: 30px;
   line-height: 30px;
   background-color: gainsboro;
   cursor: pointer;
+}
 
+.product__quantity span:hover {
+  color: gainsboro;
+  background-color: gray;
+}
+
+.product__quantity span.disabled {
+  pointer-events: none;
+  background: #f3f3f3;
 }
 
 .product__price {
   font-size: 2rem;
   color: #f57224;
-  font-weight: 400;
 }
 
 .product__purchase a {
   height: 50px;
   line-height: 50px;
   font-size: 1.1rem;
+  cursor: pointer;
+  color: white !important;
 }
 
 .shopping-cart {
@@ -70,4 +93,79 @@ input::-webkit-inner-spin-button {
   top: 0;
   min-height: 100vh;
   box-shadow: -1px -1px 6px 0 #333333;
+}
+
+.shopping__item-list {
+  height: 73vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-color: silver gainsboro;
+  scrollbar-width: thin;
+  
+}
+
+.shopping__item-list::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.shopping__item-list::-webkit-scrollbar-track-piece {
+  background: gainsboro;
+  border-radius: 0 spacing(0.4) spacing(0.4) 0;
+}
+
+.shopping__item-list::-webkit-scrollbar-thumb {
+  background: silver;
+  border-radius: spacing(0.4);
+}
+
+.shopping__item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shopping__item img {
+  width: 80px;
+  height: 100%;
+}
+
+.shopping__name {
+  font-size: 1.3rem;
+}
+
+.shopping__price {
+  color: #f57224;
+  font-size: 1.2rem;
+}
+
+.shopping__item .product__quantity input {
+  width: 30px;
+}
+
+.shopping__cancel-btn {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+
+.shopping__checkout-btn {
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  line-height: 55px;
+  padding: 0;
+  border-radius: 0;
+}
+
+.shopping__total-cost {
+  line-height: 70px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.shopping__total-cost span {
+  font-size: 1.5rem;
+  color: coral;
 }

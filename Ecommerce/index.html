@@ -16,15 +16,40 @@
 </head>
 
 <body>
-    <div class="product__container w-75 text-center px-3 py-3">
+    <div class="product__container w-75 text-center p-3">
         <h1 class="mb-3">Smartphone</h1>
+        <div class="my-2 mx-3 text-left row product__tool">
+            <div class="col pl-0">
+                <i id="ascSortBtn" class="fa fa-sort-alpha-asc text-center"></i>
+                <i id="descSortBtn" class="fa fa-sort-alpha-desc text-center"></i>
+            </div>
+
+            <div class="col pr-0 text-right">
+                <div id="productFilter" class="dropdown">
+                    <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Filter by type
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="product__item-list d-flex flex-wrap">
         </div>
 
     </div>
 
-    <div class="shopping-cart w-25 bg-danger">
-        <h1>My cart</h1>
+    <div class="shopping-cart w-25 text-center pt-3">
+        <h1>My cart <i class="fa fa-shopping-cart text-info mb-3"></i></h1>
+        
+        <div class="shopping__item-list d-flex flex-column">
+                   
+        </div>
+
+        <div class="shopping__total-cost">TOTAL: <span id="totalCost"></span></div>
+        <div class="btn btn-success w-100 shopping__checkout-btn" onclick="handleCheckOut()">Check out</div>
+    </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
